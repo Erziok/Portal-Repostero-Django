@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% extends "productos/base.html" %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CDNS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- ScrollReveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link>
+    <title>Conocenos</title>
+</head>
+
+<body>
+    {% block content %}
+
+    <!--Container del hero-->
+    <section id="hero">
+        <div class="container">
+            <h1>Conocenos</h1>
+        </div>
+    </section>
+    <!--Fin container hero-->
+    <div class="container" id="container-acerca-nosotros">
+        <h3>Acerca de nosotros</h3>
+        <p class="lead"> Comercial profesional de servicios de repostería</p>
+        <hr>
+        <div class="row">
+            <!--Articulos-->
+            <div class="col-3" id="quienes-somos">
+                <h1>¿Quienes somos?</h1>
+                <p>Portal Repostero es un sitio web enfocado a proveer materiales de reposteria a las personas que
+                    requieran
+                    materiales de forma facil, expedita y de calidad a largo plazo. </p>
+                <br>
+                <h3>01 Competitibidad en el mercado.</h3>
+                <br>
+                <h3>02 Productos de calidad.</h3>
+                <br>
+                <h3>03 Adaptarnos al cambio.</h3>
+                <br>
+                <h3>04 Visionarios.</h3>
+            </div>
+            <div class="col-9" id="contenedor-filas">
+                <div class="row" id="fila-img">
+                    <div class="col-6">
+                        <br>
+                        <div class="card" style="width: 26rem;">
+                            <img src="{% static 'imagenes/Organización.jpg' %}" class="card-img-top" alt="...">
+                            <hr>
+                            <div class="card-body">
+                                <h2>Organización</h2>
+                                <p class="card-text">
+                                    Equipo de desarrollo, atencion, gestión y administración enfocados al desarrollo de
+                                    un
+                                    ambiente
+                                    calido y reconfortante para el cliente. Con valores éticos arraigados y una visión
+                                    direccionada a las
+                                    futuras y actuales necesidades del cliente.
+
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="card" style="width: 26rem;">
+                            <img src="{% static 'imagenes/Compras.jpg' %}" class="card-img-top" alt="...">
+                            <hr>
+                            <div class="card-body">
+                                <h2>Compras</h2>
+                                <p class="card-text">
+                                    Las compras estan mediadas por un equipo de gestión de productos dividos en
+                                    diferentes
+                                    areas. Cada
+                                    una de estas areas hace un papel crucial en los procesos de logística, obtención y
+                                    posterior entrega
+                                    de los productos que se solicitan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <br>
+                        <div class="card" style="width: 26rem;">
+                            <img src="{% static 'imagenes/Metas.jpg' %}" class="card-img-top" alt="...">
+                            <hr>
+                            <div class="card-body">
+                                <h2>Metas</h2>
+                                <p class="card-text">
+                                    Las metas corporativas de la empresa estan en proporcionar un servicio de calidad y
+                                    que
+                                    sea superior a la actual
+                                    competencia en el mercado. Deseamos entregar un servicio rápido y expedito a todos
+                                    los
+                                    usuarios que utilizen nuestros servicios.
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="card" style="width: 26rem;">
+                            <img src="{% static 'imagenes/Campañas.jpg' %}" class="card-img-top" alt="...">
+                            <hr>
+                            <div class="card-body">
+                                <h2>Campañas</h2>
+                                <p class="card-text">
+                                    Las campañas de esta organización se ligan con el usuario. Con nuestro proposito de
+                                    querer brindar la mejor experiencia
+                                    al usuario nuestras campañas se ligan a mejorar nuestros servicios enfocando las
+                                    necesidades actuales de los usuarios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fin articulos-->
+        </div>
+    </div>
+    <!--Container que hacemos-->
+    <div class="container" id="que-hacemos">
+        <div class="row">
+            <div class="col-3" id="objetivos">
+                <hr>
+                <h1>¿Qué hacemos?</h1>
+                <p>Portal Repostero tiene como metas ejercer comercios de productos de repostería.</p>
+                <br>
+                <h3>01 Logística en ventas.</h3>
+                <br>
+                <h3>02 gestión optima de productos.</h3>
+                <br>
+                <h3>03 Compromiso claro con el cliente</h3>
+                <br>
+                <h3>04 Calidad de servicios.</h3>
+            </div>
+            <div class="col-9" id="contenedor-filas2">
+                <div class="row">
+                    <div class="col-6">
+                        <br>
+                        <div class="card" style="width: 26rem;">
+                            <img src="{% static 'imagenes/transporte.jpg' %}" class="card-img-top" alt="...">
+                            <hr>
+                            <div class="card-body">
+                                <h2>Ventas</h2>
+                                <p class="card-text">
+                                    Nuestro objetivo es brindar a nuestros clientes productos de la mejor calidad con
+                                    precios adecuados para todo tipo de usuarios,
+                                    manteniéndolos actualizados sobre las últimas novedades en cuanto a lo que ofrecemos
+                                    e
+                                    informarlos en cada momento para que sepan que están comprando en nuestra página
+                                    web.
+
+
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="col-6">
+                        <br>
+                        <div class="card" style="width: 26rem;">
+                            <img src="{% static 'imagenes/compromiso.jpg' %}" class="card-img-top" alt="...">
+                            <hr>
+                            <div class="card-body">
+                                <h2>Despacho</h2>
+                                <p class="card-text">
+                                    Como entidad corporativa queremos brindar y ofrecer comodidades a los usuarios de
+                                    nuestra empresa.
+                                    de este modo contamos con un servicio de despacho muy competente y comprometido a
+                                    entregar sus
+                                    enmiendas en el plazo acordado y en un estado perfecto. Todos sus productos son
+                                    embalados y ubicados con cuidado
+                                    en los transportes para evitar problemas post venta.
+
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Fin Container que hacemos-->
+    {% endblock %}
+
+    {% block javascript %}
+    <script>src = "https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" </script>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c0def2458.js" crossorigin="anonymous"></script>
+    <!--Scripts-->
+    <script>
+        window.sr = ScrollReveal();
+        sr.reveal('#hero', {
+            duration: 2000,
+            origin: 'right',
+            distance: '300px'
+        });
+        sr.reveal('#container-acerca-nosotros', {
+            duration: 2000,
+            origin: 'left',
+            distance: '300px'
+        });
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    {% endblock %}
+</body>
+
+</html>

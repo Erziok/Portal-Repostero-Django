@@ -1,0 +1,68 @@
+#contenedor-principal{
+    margin-top: 12%;
+}
+
+/* Imagen de fondo */
+body{
+    background: url('/static/imagenes/fondo-registro.png');
+    background-size: cover;
+}
+
+/* Contenido del formulario */
+#contenedor-principal{
+    background:rgba(0, 0, 0, .6);
+    color:white;
+}
+
+.tab-content{
+    background:rgba(0, 0, 0, .6);
+    color:white;
+}
+
+.nav-item{
+    background:rgba(0, 0, 0, .6);
+    color:white;
+}
+
+.nav-link{
+    background:rgba(0, 0, 0, .6);
+    color:white;
+}
+
+/* Input del formulario */
+#correo{
+    color: white;
+}
+
+#contraseña{
+    color: white;
+}
+
+#contraseña2{
+    color: white;
+}
+
+#nombre{
+    color: white;
+}
+
+#apellido{
+    color: white;
+}
+
+#correo{
+    color: white;
+}
+
+#correo2{
+    color: white;
+}
+
+#numero{
+    color: white;
+}
+
+label{
+    color: white;
+}
+

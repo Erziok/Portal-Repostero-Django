@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% extends "productos/base.html" %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredientes</title>
+    <link rel="stylesheet" href="%{ static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+    {% block content %}
+
+    <br>
+    <h2 class="container">INGREDIENTES</h2>
+    <hr>
+
+    <br>
+    <div class="row">
+        <div class="col-md 4">
+            <div class="card content-center" style="width: 18rem;">
+                <img src="Imagenes/cobertura-chocolate.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cobertura de chocolate</h5>
+                    <hr>
+                    <p class="card-text">Gourmet.</p>
+                    <p class="card-text">Precio: $3000.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md 4">
+            <div class="card content-center" style="width: 18rem;">
+                <img src="Imagenes/esencia-vainilla.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Esencia de vainilla</h5>
+                    <hr>
+                    <p class="card-text">Gourmet.</p>
+                    <p class="card-text">Precio: $600.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md 4">
+            <div class="card content-center" style="width: 18rem;">
+                <img src="Imagenes/manjar.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Manjar</h5>
+                    <hr>
+                    <p class="card-text">Nestle.</p>
+                    <p class="card-text">Precio: $1500.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md 4">
+            <div class="card content-center" style="width: 18rem;">
+                <img src="Imagenes/merengue.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Merengue en polvo</h5>
+                    <hr>
+                    <p class="card-text">Gourmet.</p>
+                    <p class="card-text">Precio: $900.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md 4">
+            <div class="card content-center" style="width: 18rem;">
+                <img src="Imagenes/premezcla-bizcocho.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Premezcla bizcocho</h5>
+                    <hr>
+                    <p class="card-text">Puratos.</p>
+                    <p class="card-text">Precio: $2300.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md 4">
+            <div class="card content-center" style="width: 18rem;">
+                <img src="Imagenes/mermelada.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mermelada frambuesa</h5>
+                    <hr>
+                    <p class="card-text">Brita.</p>
+                    <p class="card-text">Precio: $2500.</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block javascript %}
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="/index/main.js"></script>
+    {% endblock %}
+
+</body>
+<!--Fin Footer -->
+
+</html>

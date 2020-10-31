@@ -1,0 +1,102 @@
+html{
+    scroll-behavior: smooth;
+}
+#hero{
+    background: url('/static/imagenes/trabajo-en-equipo.jpg');
+    padding-top: 90px;
+    background-size: cover;
+    min-height: 600px;
+    text-align: left;
+
+}
+#hero h1{
+    font-size: 50px;
+    color: #ffffff;
+    position: relative;
+    top:200px;
+
+}
+
+#contenedor-filas hr{
+    border: 0 none #000000;
+    border-top: 8px solid #1F8F9A ;
+    height: 1px;
+    margin: 0px 0;
+    display: block;
+    clear: both;
+    
+}
+#footer{
+    background-color:  #131a22;
+    
+}
+#footer-2{
+    background-color: 	#232f3e ;
+}
+#footer h6{
+    color: #fff;
+    
+}
+#contenedor-footer{
+    padding-top: 100px;
+}
+#contenedor-footer h5{
+    color: #fff;
+}
+#contenedor-footer h3{
+    color: #C7D3D4;
+    font-size: 20px;
+}
+#contenedor-footer h4{
+    color: #E2EEF0;
+    font-size: 13px;
+}
+#container-acerca-nosotros{
+    padding-top: 35px;
+}
+#objetivos h3{
+    font-size: 20px;
+    color: gray;
+}
+#quienes-somos h3{
+    font-size: 20px;
+    color: gray;
+}
+.navbar{
+    background-color: #485769;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, .05);
+    min-height: 100px;
+}
+
+.nav-link{
+    color: #ffffff;
+    font: bold;
+}
+
+.nav-link:hover{
+    color: #1a1a1a;
+}
+
+.logo-brand{
+    min-width: 200px;
+    max-width: 180px;
+}
+
+.navbar-toggler{
+    font-size: 40px;
+}
+
+.navbar-toggler:focus{
+    outline: none;
+}
+#btn-volver-inicio{
+    background-color: #485769;
+    border-radius: 0;
+    
+}
+#btn-volver-inicio i{
+    color: #fff;
+}
+html{
+    scroll-behavior: smooth;
+}

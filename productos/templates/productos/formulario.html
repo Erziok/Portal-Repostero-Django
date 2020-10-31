@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <!--Hoja de estilos CSS-->
+  <link rel="stylesheet" href="{% static '/css/estilo-formulario.css' %}">
+  <!-- ScrollReveal-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>Document</title>
+  <!-- Script para las validaciones -->
+  <script src="{% static 'js/validar.js' %}"></script>
+</head>
+
+<body>
+  {% block content %}
+  <!--Inicio tab-->
+  <div class="container col-md-5" id="contenedor-principal">
+    <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab-md" data-toggle="tab" href="#home-md" role="tab" aria-controls="home-md"
+          aria-selected="true">Iniciar sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab-md" data-toggle="tab" href="#profile-md" role="tab"
+          aria-controls="profile-md" aria-selected="false">Registrarse</a>
+      </li>
+    </ul>
+    <div class="tab-content card pt-5" id="myTabContentMD">
+      <div class="tab-pane fade show active" id="home-md" role="tabpanel" aria-labelledby="home-tab-md">
+        <h3 class="text-center"><b>Iniciar sesión</b></h3>
+        <hr>
+        <form class="needs-validation" style="padding: 20px;">
+          <div class="md-form">
+            <i class="fas fa-envelope prefix"></i>
+            <input type="email" id="correo" class="form-control">
+            <label for="correo">Correo:</label>
+          </div>
+          <div class="md-form">
+            <i class="fas fa-unlock-alt prefix"></i>
+            <input type="password" id="contraseña" class="form-control">
+            <label for="contraseña">Contraseña:</label>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-indigo" id="btn-inic" onclick="validarLogin();">Enviar</button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="profile-md" role="tabpanel" aria-labelledby="profile-tab-md">
+        <h3 class="text-center"><b>Registrate</b></h3>
+        <hr>
+        <form class="needs-validation" style="padding: 20px;" novalidate>
+          <div class="row">
+            <div class="md-form col-6">
+              <i class="fas fa-user prefix"></i>
+              <input type="text" id="nombre" class="form-control">
+              <label for="nombre">Nombre:</label>
+            </div>
+            <div class="md-form col-6">
+              <input type="text" id="apellido" class="form-control">
+              <label for="apellido">Apellido:</label>
+            </div>
+          </div>
+          <div class="md-form">
+            <i class="fas fa-envelope prefix"></i>
+            <input type="email" id="correo2" class="form-control">
+            <label for="correo2">Email:</label>
+          </div>
+          <div class="md-form">
+            <i class="fas fa-unlock-alt prefix"></i>
+            <input type="password" id="contraseña2" class="form-control">
+            <label for="contraseña2">Contraseña:</label>
+          </div>
+          <div class="md-form">
+            <i class="fas fa-mobile-alt prefix"></i>
+            <input type="text" id="numero" class="form-control">
+            <label for="numero">Numero:</label>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-indigo" onclick="validarRegistro();">Enviar</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <!--Fin tab-->
+  {% endblock %}
+
+  {% block javascript %}
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  <!--JS-->
+  <script src="main-tabs.js"></script>
+
+  <!--Scripts-->
+  <script>
+    window.sr = ScrollReveal();
+    sr.reveal('#contenedor-principal', {
+      duration: 1500,
+      origin: 'top',
+      distance: '200px'
+    });
+    sr.reveal('#btn-inic', {
+      duration: 2000,
+      origin: 'bottom',
+      delay: 900
+    })
+  </script>
+  {% endblock %}
+</body>
+
+</html>
