@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% extends "productos/base.html" %}
     {% load static %}
@@ -7,33 +8,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>Menú</title>
 </head>
+
 <body>
     {% block content %}
 
     <br><br>
-    <center><h1>Menú Administrador</h1></center>
+    <center>
+        <h1>Menú Administrador</h1>
+    </center>
     <br><br>
 
     <br>
-    <div class="row">
-        <div class="col-md 3">
-            <center><i class="fas fa-plus-circle"></i></center>
-            <center><h4>Agregar</h4></center>
+    <div class="container contenedor-crud">
+        <div class="row" style="margin-bottom: 80px;">
+            <div class="col-md 3">
+                <center>
+                    <a href="/productos/agregar" class="ref-crud">
+                        <i class="fas fa-plus-circle"></i>
+                        <h4>Agregar</h4>
+                    </a>
+                </center>
+            </div>
         </div>
-        <div class="col-md 3">
-            <center><i class="fas fa-trash-alt"></i></center>
-            <center><h4>Eliminar</h4></center>
+        <div class="row" style="margin-bottom: 80px;">
+            <div class="col-md 3">
+                <center>
+                    <a href="/productos/eliminar" class="ref-crud">
+                        <i class="fas fa-trash-alt"></i>
+                        <h4>Eliminar</h4>
+                    </a>
+                </center>
+            </div>
         </div>
-        <div class="col-md 3">
-            <center><i class="fas fa-search"></i></center>
-            <center><h4>Buscar</h4></center>
+        <div class="row" style="margin-bottom: 80px;">
+            <div class="col-md 3">
+                <center>
+                    <a href="/productos/buscar" class="ref-crud">
+                        <i class="fas fa-search"></i>
+                        <h4>Buscar</h4>
+                    </a>
+                </center>
+            </div>
         </div>
-        <div class="col-md 3">
-            <center><i class="fas fa-edit"></i></center>
-            <center><h4>Editar</h4></center>
+        <div class="row" style="margin-bottom: 80px;">
+            <div class="col-md 3">
+                <center>
+                    <a href="/productos/modificar" class="ref-crud">
+                        <i class="fas fa-edit"></i>
+                        <h4>Editar</h4>
+                    </a>
+                </center>
+            </div>
         </div>
     </div>
     {% endblock %}
@@ -77,4 +104,5 @@
     </script>
     {% endblock %}
 </body>
+
 </html>

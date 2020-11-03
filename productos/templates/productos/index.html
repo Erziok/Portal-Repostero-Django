@@ -14,6 +14,7 @@
 
 <body>
     {% block content %}
+    <!--NavBar-->
 
     <!--Carrusel-->
 
@@ -67,46 +68,23 @@
     <hr>
     <br>
     <div class="row">
-        <!-- Row de productos -->
-        <div class="col-md 4" id="card-chips-colores">
+        {% for Producto in productos %}
+        <div class="col-lg-4">
             <div class="card content-center" style="width: 18rem;">
-                <img src=" " width="284" height="284" class="card-img-top" alt="...">
+                <img src="{{Producto.imagenURL}}" width="284" height="284" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"> - </h5>
+                    <h5 class="card-title">{{Producto.nombre}}</h5>
                     <hr>
-                    <p class="card-text"> - </p>
-                    <p class="card-text"> - </p>
-                    <p class="card-text"> - </p>
-                    <a href="Decoración.html" class="btn btn-primary">Más detalles</a>
+                    <h5>${{Producto.precio}}</h5>
+                    <button data-product={{Producto.id}} data-action="add"
+                        class="btn btn-outline-secondary btn-añadir actualizar-carrito"
+                        style="margin-bottom: 15px;">Añadir al carrito</button>
+                    <a href="#" class="btn btn-outline-success">Detalles</a>
+
                 </div>
             </div>
         </div>
-        <div class="col-md 4" id="card-mermelada-frambuesa">
-            <div class="card content-center" style="width: 18rem;">
-                <img src=" " width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> - </h5>
-                    <hr>
-                    <p class="card-text"> - </p>
-                    <p class="card-text"> - </p>
-                    <p class="card-text"> - </p>
-                    <a href="Ingredientes.html" class="btn btn-primary">Más detalles</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4" id="card-manga-pastelera">
-            <div class="card content-center" style="width: 18rem;">
-                <img src=" " width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> - </h5>
-                    <hr>
-                    <p class="card-text"> - </p>
-                    <p class="card-text"> - </p>
-                    <p class="card-text"> - </p>
-                    <a href="#" class="btn btn-primary">Más detalles</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     {% endblock %}
 
@@ -124,20 +102,10 @@
 
     <script>
         window.sr = ScrollReveal();
-        sr.reveal('#card-chips-colores', {
-            duration: 2000,
+        sr.reveal('.card', {
+            duration: 1500,
             origin: 'right',
-            distance: '900px'
-        });
-        sr.reveal('#card-mermelada-frambuesa', {
-            duration: 2000,
-            origin: 'right',
-            distance: '600px'
-        });
-        sr.reveal('#card-manga-pastelera', {
-            duration: 2000,
-            origin: 'right',
-            distance: '300px'
+            distance: '1000px'
         });
         sr.reveal('.txt-productos-destacados', {
             duration: 2000,
@@ -149,5 +117,5 @@
 
     {% endblock %}
 </body>
-
+<!-- Fin Footer -->
 </html>

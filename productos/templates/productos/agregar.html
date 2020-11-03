@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/CRUD.css' %}">
+</head>
+
+<body>
+    {% block content %}
+    {% include 'productos/messages.html' %}
+    
+    <form action="agregar_producto" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 style="margin-top: 50px;">Agregar</h1>
+            </div>
+        </div> 
+        <div class="container mx-auto contenedor-formulario">          
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="md-form">
+                        <input name="codigo" type="text" id="materialLoginFormEmail" class="form-control">
+                        <label for="materialLoginFormEmail">Código</label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="md-form">
+                        <input name="categoria" type="text" id="materialLoginFormEmail" class="form-control">
+                        <label for="materialLoginFormEmail">Categoria</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="md-form">
+                        <input name="nombre" type="text" id="materialLoginFormEmail" class="form-control">
+                        <label for="materialLoginFormEmail">Nombre</label>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="md-form">
+                        <input name="precio" type="text" id="materialLoginFormEmail" class="form-control">
+                        <label for="materialLoginFormEmail">Precio</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="md-form">
+                        <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button style="border-radius: 24px;" type="submit" name="guardar" value="Grabar" class="btn btn-outline-success">Aplicar</button>
+                <a href="/productos/menu"><button style="border-radius: 24px;" type="button" class="btn btn-outline-dark">Volver</button></a>
+                
+
+            </div>
+        </div>
+    </form>
+    {% endblock %}
+
+    {% block javascript %}
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script>
+        setTimeout(function(){
+            if($('#msg').length > 0){
+                $('#msg').remove();
+            }
+        }, 2000)
+    </script>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+/*Codigo buscar*/
+.imput-buscar #codigo-producto{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #B6F3E2;
+    padding: 10px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    position: relative;
+}
+.imput-buscar #codigo-producto:focus{
+    width: 280px;
+}
+.imput-buscar #codigo-buscar{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #B6F3E2;
+    padding: 10px 10px;
+    width: 100px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.24s;
+}
+.imput-buscar #codigo-buscar:hover{
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+}
+/*Contenedores*/
+.container{
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    border-radius: 14px;
+    margin-top: 80px;
+    padding: 40px;
+}
+
+/*Codigo eliminar (tiene animacion mas grande)*/
+.imput-buscar #codigo-eliminar{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #B6F3E2;
+    padding: 10px 10px;
+    width: 300px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    position: relative;
+}
+.imput-buscar #codigo-eliminar:focus{
+    width: 380px;
+}

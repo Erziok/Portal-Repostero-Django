@@ -19,83 +19,26 @@
 
     <br>
     <div class="row">
-        <div class="col-md 4">
+        {% for Producto in productos  %}
+        <div class="col-lg-4">
             <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/cobertura-chocolate.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <img src="{{Producto.imagenURL}}" width="284" height="284" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Cobertura de chocolate</h5>
+                    <h5 class="card-title">{{Producto.nombre}}</h5>
                     <hr>
-                    <p class="card-text">Gourmet.</p>
-                    <p class="card-text">Precio: $3000.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <h5>${{Producto.precio}}</h5>
+                    <button data-product={{Producto.id}} data-action="add"
+                        class="btn btn-outline-secondary btn-añadir actualizar-carrito"
+                        style="margin-bottom: 15px;">Añadir al carrito</button>
+                    <a href="#" class="btn btn-outline-success">Detalles</a>
+
                 </div>
             </div>
         </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/esencia-vainilla.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Esencia de vainilla</h5>
-                    <hr>
-                    <p class="card-text">Gourmet.</p>
-                    <p class="card-text">Precio: $600.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/manjar.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Manjar</h5>
-                    <hr>
-                    <p class="card-text">Nestle.</p>
-                    <p class="card-text">Precio: $1500.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <br>
-    <div class="row">
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/merengue.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Merengue en polvo</h5>
-                    <hr>
-                    <p class="card-text">Gourmet.</p>
-                    <p class="card-text">Precio: $900.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/premezcla-bizcocho.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Premezcla bizcocho</h5>
-                    <hr>
-                    <p class="card-text">Puratos.</p>
-                    <p class="card-text">Precio: $2300.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/mermelada.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Mermelada frambuesa</h5>
-                    <hr>
-                    <p class="card-text">Brita.</p>
-                    <p class="card-text">Precio: $2500.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-    </div>
     {% endblock %}
 
     {% block javascript %}
@@ -103,6 +46,14 @@
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="/index/main.js"></script>
+    <script>
+        window.sr = ScrollReveal();
+        sr.reveal('.card', {
+            duration: 1500,
+            origin: 'right',
+            distance: '1000px'
+        });
+    </script>
     {% endblock %}
 
 </body>

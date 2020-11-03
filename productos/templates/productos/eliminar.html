@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/CRUD.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+    {% include 'productos/messages.html' %}
+    
+    
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 style="margin-top: 50px;">Eliminar producto</h1>
+        </div>
+    </div> 
+    <hr>
+    <form action="eliminar_por_codigo" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row imput-buscar">
+                <div class="col-lg-10">
+                    <input type="text" name="codigo" id="codigo-eliminar" placeholder="Código de producto a eliminar...">
+                </div>
+                <div class="col-lg-2">
+                    <input type="submit" name="opcion" value="Eliminar" id="codigo-buscar">
+                </div> 
+            </div>
+            <a href="/productos/menu"><button style="border-radius: 24px; margin-top: 80px;" type="button" class="btn btn-outline-dark">Volver</button></a>
+        </div>
+    </form>
+    {% endblock %}
+    {% block javascript %}
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script>
+        setTimeout(function(){
+            if($('#msg').length > 0){
+                $('#msg').remove();
+            }
+        }, 2000)
+    </script>
+    {% endblock %}
+
+</body>
+</html>

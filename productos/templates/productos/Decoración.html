@@ -17,93 +17,51 @@
     <h2 class="container">DECORACIÓN</h2>
     <hr>
     <br>
+
+
     <div class="row">
-        <div class="col-md 4">
+        {% for Producto in productos  %}
+        <div class="col-lg-4">
             <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/chips-chocolate.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <img src="{{Producto.imagenURL}}" width="284" height="284" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Chips de chocolate</h5>
+                    <h5 class="card-title">{{Producto.nombre}}</h5>
                     <hr>
-                    <p class="card-text">Gourmet.</p>
-                    <p class="card-text">Precio: $2000.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <h5>${{Producto.precio}}</h5>
+                    <button data-product={{Producto.id}} data-action="add"
+                        class="btn btn-outline-secondary btn-añadir actualizar-carrito"
+                        style="margin-bottom: 15px;">Añadir al carrito</button>
+                    <a href="#" class="btn btn-outline-success">Detalles</a>
+
                 </div>
             </div>
         </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/chips-colores.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Chips de colores</h5>
-                    <hr>
-                    <p class="card-text">Orquidea.</p>
-                    <p class="card-text">Precio: $1500.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/coco-rallado.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Coco rallado</h5>
-                    <hr>
-                    <p class="card-text">Gourmet.</p>
-                    <p class="card-text">Precio: $1000.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <br>
-    <div class="row">
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/colorantes.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Colorantes</h5>
-                    <hr>
-                    <p class="card-text">Gourmet.</p>
-                    <p class="card-text">Precio: $1200.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/gel-decorativo.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Gel decorativo</h5>
-                    <hr>
-                    <p class="card-text">Decora.</p>
-                    <p class="card-text">Precio: $500.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/merengues-colores.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Merengues de colores</h5>
-                    <hr>
-                    <p class="card-text">Merengues comestibles</p>
-                    <p class="card-text">Precio: $1300.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     {% endblock %}
 
     {% block javascript %}
     <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="/index/main.js"></script>
+        
+    <script>
+    window.sr = ScrollReveal();
+    sr.reveal('.card', {
+        duration: 1500,
+        origin: 'right',
+        distance: '1000px'
+    });
 
+    </script>
     {% endblock %}
+
 
 </body>
 <!--Fin Footer -->
+
 </html>

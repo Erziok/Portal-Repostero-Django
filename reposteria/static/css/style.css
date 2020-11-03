@@ -10,7 +10,49 @@ h1{
     font-weight: 600;
     line-height: 80px;
 }
+/*Referencias CRUD*/
+.col-md .ref-crud{
+    color: black;
+    text-decoration: none;
+    transition: 0.30s;
+}
+.col-md .ref-crud:hover{
+    color: grey;
+    
+}
+/* contenedores carrito*/
+.contenedor-carrito{
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 80px;
 
+}
+/*Hidden*/
+.hidden{
+    display: none;
+}
+/* Carrito columna*/
+.carrito-columna{
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+}
+/*Cantidad carrito*/
+.cantidad{
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 10px;
+}
+/*Arrows carrito*/
+.flecha-cantidad{
+    width: 12px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 4px;
+}
 /* Margenes */
 .topmargin-lg{
     margin-top: 60px;
@@ -148,21 +190,3 @@ h1{
     color: #fff;
 }
 /* Fin Volver inicio */
-
-/* Menú admin */
-
-.fa-plus-circle{
-    font-size: xx-large;
-}
-
-.fa-trash-alt{
-    font-size: xx-large;
-}
-
-.fa-search{
-    font-size: xx-large;
-}
-
-.fa-edit{
-    font-size: xx-large;
-}

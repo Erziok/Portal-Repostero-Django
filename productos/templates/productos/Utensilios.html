@@ -19,83 +19,26 @@
 
     <br>
     <div class="row">
-        <div class="col-md 4">
+        {% for Producto in productos  %}
+        <div class="col-lg-4">
             <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/rodillo-uslero.jpg" width="284" height="284" class="card-img-top" alt="...">
+                <img src="{{Producto.imagenURL}}" width="284" height="284" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Rodillo o uslero</h5>
+                    <h5 class="card-title">{{Producto.nombre}}</h5>
                     <hr>
-                    <p class="card-text">Rodillo 33cm.</p>
-                    <p class="card-text">Precio: $5000.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <h5>${{Producto.precio}}</h5>
+                    <button data-product={{Producto.id}} data-action="add"
+                        class="btn btn-outline-secondary btn-añadir actualizar-carrito"
+                        style="margin-bottom: 15px;">Añadir al carrito</button>
+                    <a href="#" class="btn btn-outline-success">Detalles</a>
+
                 </div>
             </div>
         </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/molde-cupcake.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Molde para cupcake</h5>
-                    <hr>
-                    <p class="card-text">Molde 6 cavidades.</p>
-                    <p class="card-text">Precio: $1500.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/manga-pastelera.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Manga pastelera</h5>
-                    <hr>
-                    <p class="card-text">Stadter.</p>
-                    <p class="card-text">Precio: $7000.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
     <br>
-    <div class="row">
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/espatula.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Espatula recta</h5>
-                    <hr>
-                    <p class="card-text">Espatula 25cm.</p>
-                    <p class="card-text">Precio: $3000.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/cortador-corona.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Cortador metalico</h5>
-                    <hr>
-                    <p class="card-text">Cortador corona.</p>
-                    <p class="card-text">Precio: $1300.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md 4">
-            <div class="card content-center" style="width: 18rem;">
-                <img src="Imagenes/batidor.jpg" width="284" height="284" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Batidor metalico</h5>
-                    <hr>
-                    <p class="card-text">Batidor metalico manual 30cm</p>
-                    <p class="card-text">Precio: $2800.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div>
-    </div>
     {% endblock %}
 
     {% block javascript %}
@@ -103,6 +46,15 @@
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="/index/main.js"></script>
+
+    <script>
+        window.sr = ScrollReveal();
+        sr.reveal('.card', {
+            duration: 1500,
+            origin: 'right',
+            distance: '1000px'
+        });
+    </script>
     {% endblock %}
 
 </body>

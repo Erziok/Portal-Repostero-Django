@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 import os
 
 from pathlib import Path
@@ -122,15 +121,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-
+import os
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATICFILES_DIRS = (
-  os.path.join(SITE_ROOT, 'static/'),
+    os.path.join(SITE_ROOT, 'static/'),
 )
+MEDIA_URL= '/media/'
+MEDIA_URL = '/imagenes/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/imagenes')
 
 # en producción hay que eliminar estos backend
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
@@ -141,9 +143,13 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/productos/menu'  # The page you want users to arrive at after they successful log in
+LOGIN_REDIRECT_URL = '/productos/index'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
-
-
-
-
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}

@@ -1,10 +1,11 @@
 {% extends "registration/registration_base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Activation email sent" %}{% endblock %}
+{% block title %}{% trans "Email de activación enviado" %}{% endblock %}
 
 {% block content %}
-<p>{% trans "Please check your email to complete the registration process." %}</p>
+<p>{% trans "Por favor revisa tu email para competar el proceso de registro." %}</p>
+<a type="button" href="/productos/index">{% trans "Volver" %}</a>
 {% endblock %}
 
 
