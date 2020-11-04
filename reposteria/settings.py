@@ -28,6 +28,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Configuración del email de recuperación de contraseña
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'portalrepostero@gmail.com'
+EMAIL_HOST_PASSWORD = 'reposteria123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 # Application definition
 
@@ -134,10 +141,6 @@ MEDIA_URL= '/media/'
 MEDIA_URL = '/imagenes/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/imagenes')
 
-# en producción hay que eliminar estos backend
-EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-# fin backend email
 
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
