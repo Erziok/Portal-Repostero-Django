@@ -7,6 +7,7 @@
     <!-- Hojas de estilos -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/estilos-tabs.css' %}" rel="stylesheet">
+    <link href="{% static 'css/api.css' %}" rel="stylesheet" >
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
     <!-- Required meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -107,6 +108,9 @@
     <script type="text/javascript">
         var usuario = '{{request.user}}'
     </script>
+    <!-- Script de la API y credenciales-->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
     {% endblock %}
 
     <!--Footer -->
