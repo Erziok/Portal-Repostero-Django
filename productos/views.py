@@ -29,12 +29,12 @@ def buscar(request):
     return render(request, 'productos/buscar.html',context)
 
 
-def index(request):
-    print("ok, estamos en la vista index")
+def home(request):
+    print("ok, estamos en la vista home")
     context={}
     return render(request,'productos/index.html',context)
 
-def Conocenos(request):
+def conocenos(request):
     print("ok, estamos en la vista conocenos")
     context={}
     return render(request,'productos/Conocenos.html',context)

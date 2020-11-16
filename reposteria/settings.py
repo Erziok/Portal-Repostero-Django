@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Terceros
     'registration',
+    'rest_framework',
+    #Aplicación
     'productos',
 ]
 
@@ -141,13 +144,15 @@ MEDIA_URL= '/media/'
 MEDIA_URL = '/imagenes/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/imagenes')
 
-
+#Configuración Registration
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/productos/index'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
+
+
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -155,4 +160,10 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success',
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
+}
+
+#Configuración API 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
 }
