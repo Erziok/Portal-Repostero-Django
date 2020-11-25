@@ -4,13 +4,18 @@
 {% block title %}{% trans "Register for an account" %}{% endblock %}
 
 {% block content %}
+<br><br>
+<div class="container" id="formulario"><br>
 <div class="container">
-<form method="post" action="">
+<center><h1>Registrarse</h1></center><br>
+<form method="post" action="" id="hola">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="{% trans 'Enviar' %}" />
-</form>
+    <button type="sumbit" class="btn btn-info" value="{% trans 'Enviar' %}"> Enviar</button>
+</form><br>
 </div>
+</div>
+<br><br>
 {% endblock %}
 
 

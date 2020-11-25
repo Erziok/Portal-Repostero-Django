@@ -2,21 +2,47 @@
 {% load i18n %}
 
 {% block title %}{% trans "Log in" %}{% endblock %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 
 {% block content %}
+
+<br><br><br>
+<div class="container" id="formulario"><br>
 <div class="container">
+<center><h1><i class="fas fa-user"></i> Iniciar Sesión</h1></center><br>
 <form method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="{% trans 'Iniciar sesión' %}" />
+    <button type="sumbit" class="btn btn-info" value="{% trans 'Iniciar sesión' %}"> Iniciar Sesión</button>
     <input type="hidden" name="next" value="{{ next }}" />
-</form>
+</form><br>
 
 <p>{% trans "Olvidaste tu contraseña?" %} <a href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>.</p>
 <p>{% trans "No tienes una cuenta?" %} <a href="{% url 'registration_register' %}">{% trans "Registrar" %}</a>.</p>
+<a href="{% url 'social:begin' 'facebook' %}" style="padding: 10px; color: #fff; background: #4267b2; border-radius: 5px; margin-right: 20px;"><i class="fab fa-facebook-square"></i> Facebook </a>
+<a href="{% url 'social:begin' 'google-oauth2' %}" style="padding: 10px; color: #fff; background: #dc5043; border-radius: 5px; margin-right: 20px;"><i class="fab fa-google-plus-g"></i> Google+ </a>
+<br><br>
 </div>
-{% endblock %}
+</div>
 
+{% endblock %}
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 {% comment %}
 **registration/login.html**

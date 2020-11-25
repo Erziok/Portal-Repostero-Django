@@ -35,7 +35,10 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     #Paths de la API
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
+    path('oauth/', include('social_django.urls', namespace='social')),
+    path('', include('pwa.urls')),
 ]
 #IMAGENES
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

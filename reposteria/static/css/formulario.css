@@ -1,0 +1,10 @@
+body{
+    background: url('/static/imagenes/trabajo-en-equipo.jpg');
+}
+
+#formulario{
+    background:rgba(255, 255, 255);
+    border-radius: 20px;
+    color: black;
+}
+

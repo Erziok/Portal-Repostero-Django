@@ -51,6 +51,12 @@ INSTALLED_APPS = [
     'rest_framework',
     #Aplicación
     'productos',
+    #social
+    'social_django',
+
+
+    #service worker
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -61,9 +67,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #social auth
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'reposteria.urls'
+#service worker
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
 
 TEMPLATES = [
     {
@@ -76,6 +86,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #Social auth
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+                
             ],
         },
     },
@@ -149,8 +163,10 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/productos/index'  # The page you want users to arrive at after they successful log in
+#LOGIN - REDIRECT
+LOGIN_REDIRECT_URL = '/productos/home'  # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 
 from django.contrib.messages import constants as messages
@@ -167,3 +183,52 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+#Social auth
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SITE_ID = 1
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '371322784199542'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '89b8063decde2e42a1febdef01ca42f4'  # App Secret
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY  =  '172634924731-pui7no6ck988aqt9b13p13oraea0r6o8.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET  =  'GWYKEzuHnmszDi5RG1o2dCr8'
+
+#PWA SERVICE WORKER
+PWA_APP_NAME = 'Tienda-Resposteria'
+PWA_APP_DESCRIPTION = "Tienda-Resposteria PWA"
+PWA_APP_THEME_COLOR = '#000000'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/productos/home.html'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': 'static/imagenes/logox.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': 'static/imagenes/logox.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': 'static/imagenes/logox.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
